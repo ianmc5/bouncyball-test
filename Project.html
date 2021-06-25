@@ -71,7 +71,7 @@ function text()
 
 
 // "create particle" function
-function Particle(x, y, vx, vy, r, color, a)
+function Particle(x, y, vx, vy, r, color)
 {
  this.x = x;
  this.y = y;
@@ -126,7 +126,7 @@ this.draw();
 function init()
 {
 
- for (let i=0; i< 5; i++)
+ for (let i=0; i<5; i++)
  {
   let r = (Math.random() * 5) + 5;
   let x = (window.innerWidth / 2) + (Math.random() * 40) - 20;
@@ -134,9 +134,8 @@ function init()
   let vx = (Math.random() * 8) - 4;
   let vy = (Math.random() * 4) - 2;
   let color = '#'+(0x1000000+Math.random()*0xffffff).toString(16).substr(1,6);
-  let a = g;
   amount ++;
-  particleArray.push(new Particle(x, y, vx, vy, r, color, a));
+  particleArray.push(new Particle(x, y, vx, vy, r, color));
  }
 
 }
@@ -157,7 +156,7 @@ function animate()
   }
  if(mousedown === true)
    {
-   init();
+    init();
    }
 
  var ntime = new Date().getTime();
